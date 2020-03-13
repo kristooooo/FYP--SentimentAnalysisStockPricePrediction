@@ -1,3 +1,6 @@
+# this module predicts january 2020 prices based on the historical data from 2019
+# prediction is done using ML algo and Adj Close 2019 prices
+
 import numpy as np
 import pandas as pd
 from sklearn.linear_model import LinearRegression
@@ -8,7 +11,17 @@ from sklearn.svm import SVR
 # forecast and further ML algo predicitons
 stock_data = pd.read_csv("OutputData/2019-20_BTC-USD.csv")
 stock_data = stock_data.set_index('Date')
-stock_data = stock_data[['Adj Close']]
+stock_data = pd.read_csv("OutputData/2019-20_BTC-USD.csv")
+
+# daily volatility difference,
+stock_data['HL_%'] = (stock_data['High'] - stock_data['Low']) / stock_data['Adj Close']
+# daily percentage change
+stock_data['%_change'] = (stock_data['Adj Close'] - stock_data['Open']) / stock_data['Open']
+
+stock_data = stock_data[['Adj Close', 'HL_%', '%_change', 'Volume', 'Date']]
+stock_data = stock_data.set_index('Date')
+
+print(stock_data)
 
 # A variable for predicting 'n' days out into the future
 forecast_out = 32  # 'n=32' days (all January 2019 + 1st of Feb)
@@ -72,4 +85,4 @@ svr_prediction_frame.reset_index(drop=True, inplace=True)
 # linking all 3 dataframes into one and re-setting the index to dates, save to csv
 stock_data_predictions = pd.concat([stock_data, lr_prediction_frame, svr_prediction_frame], axis=1)
 stock_data_predictions = stock_data_predictions.set_index('Date', drop=True)
-stock_data_predictions.to_csv("ProcessedData/StockPrediction.csv")
+stock_data_predictions.to_csv("ProcessedData/StockPredictions.csv")
