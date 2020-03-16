@@ -14,7 +14,7 @@ naive_bayes_mode.to_csv("ProcessedData/naive_bayes_mode.csv")
 
 # calculates median of naive bayes positive and negative tweets per day
 naive_bayes_count_results = pd.read_csv("ProcessedData/naive_bayes_count.csv")
-naive_bayes_median = naive_bayes_count_results.groupby(['CREATED AT'])['Naive Bayes.1'].median()
+naive_bayes_median = naive_bayes_count_results.groupby(['CREATED AT'])['Count'].median()
 naive_bayes_median = naive_bayes_median.to_frame()
 naive_bayes_median = pd.DataFrame(naive_bayes_median)
 naive_bayes_median.to_csv("ProcessedData/naive_bayes_median.csv")
@@ -31,8 +31,7 @@ multinomial_naive_bayes_mode.to_csv("ProcessedData/multinomial_naive_bayes_mode.
 
 # calculates median of Multinomial naive bayes positive and negative tweets per day
 multinomial_naive_bayes_count_results = pd.read_csv("ProcessedData/multinomial_naive_bayes_counts.csv")
-multinomial_naive_bayes_median = multinomial_naive_bayes_count_results.groupby(['CREATED AT'])[
-    'Multinomial Naive Bayes.1'].median()
+multinomial_naive_bayes_median = multinomial_naive_bayes_count_results.groupby(['CREATED AT'])['Counts'].median()
 multinomial_naive_bayes_median = multinomial_naive_bayes_median.to_frame()
 multinomial_naive_bayes_median = pd.DataFrame(multinomial_naive_bayes_median)
 multinomial_naive_bayes_median.to_csv("ProcessedData/multinomial_naive_bayes_median.csv")
@@ -49,8 +48,7 @@ bernoulli_naive_bayes_mode.to_csv("ProcessedData/bernoulli_naive_bayes_mode.csv"
 
 # calculates median of Bernoulli naive bayes positive and negative tweets per day
 bernoulli_naive_bayes_count_results = pd.read_csv("ProcessedData/bernoulli_naive_bayes_counts.csv")
-bernoulli_naive_bayes_median = bernoulli_naive_bayes_count_results.groupby(['CREATED AT'])[
-    'Bernoulli Naive Bayes.1'].median()
+bernoulli_naive_bayes_median = bernoulli_naive_bayes_count_results.groupby(['CREATED AT'])['Counts'].median()
 bernoulli_naive_bayes_median = bernoulli_naive_bayes_median.to_frame()
 bernoulli_naive_bayes_median = pd.DataFrame(bernoulli_naive_bayes_median)
 bernoulli_naive_bayes_median.to_csv("ProcessedData/bernoulli_naive_bayes_median.csv")
@@ -67,7 +65,7 @@ logistic_regression_mode.to_csv("ProcessedData/logistic_regression_mode.csv")
 
 # calculates median of Logistic Regression positive and negative tweets per day
 logistic_regression_count_results = pd.read_csv("ProcessedData/logistic_regression_counts.csv")
-logistic_regression_median = logistic_regression_count_results.groupby(['CREATED AT'])['Logistic Regression.1'].median()
+logistic_regression_median = logistic_regression_count_results.groupby(['CREATED AT'])['Counts'].median()
 logistic_regression_median = logistic_regression_median.to_frame()
 logistic_regression_median = pd.DataFrame(logistic_regression_median)
 logistic_regression_median.to_csv("ProcessedData/logistic_regression_median.csv")
@@ -84,8 +82,7 @@ linear_support_vector_mode.to_csv("ProcessedData/linear_support_vector_mode.csv"
 
 # calculates median of Linear Support Vector positive and negative tweets per day
 linear_support_vector_count_results = pd.read_csv("ProcessedData/linear_support_vector_counts.csv")
-linear_support_vector_median = linear_support_vector_count_results.groupby(['CREATED AT'])[
-    'Linear Support Vector.1'].median()
+linear_support_vector_median = linear_support_vector_count_results.groupby(['CREATED AT'])['Counts'].median()
 linear_support_vector_median = linear_support_vector_median.to_frame()
 linear_support_vector_median = pd.DataFrame(linear_support_vector_median)
 linear_support_vector_median.to_csv("ProcessedData/linear_support_vector_median.csv")
@@ -102,7 +99,7 @@ nu_support_vector_mode.to_csv("ProcessedData/nu_support_vector_mode.csv")
 
 # calculates median of Nu-Support Vector positive and negative tweets per day
 nu_support_vector_count_results = pd.read_csv("ProcessedData/nu_support_vector_counts.csv")
-nu_support_vector_median = nu_support_vector_count_results.groupby(['CREATED AT'])['Nu-Support Vector.1'].median()
+nu_support_vector_median = nu_support_vector_count_results.groupby(['CREATED AT'])['Counts'].median()
 nu_support_vector_median = nu_support_vector_median.to_frame()
 nu_support_vector_median = pd.DataFrame(nu_support_vector_median)
 nu_support_vector_median.to_csv("ProcessedData/nu_support_vector_median.csv")
@@ -120,7 +117,7 @@ stochastic_gradient_descent_mode.to_csv("ProcessedData/stochastic_gradient_desce
 # calculates median of Stochastic Gradient Descent positive and negative tweets per day
 stochastic_gradient_descent_count_results = pd.read_csv("ProcessedData/stochastic_gradient_descent_counts.csv")
 stochastic_gradient_descent_median = stochastic_gradient_descent_count_results.groupby(['CREATED AT'])[
-    'Stochastic Gradient Descent.1'].median()
+    'Counts'].median()
 stochastic_gradient_descent_median = stochastic_gradient_descent_median.to_frame()
 stochastic_gradient_descent_median = pd.DataFrame(stochastic_gradient_descent_median)
 stochastic_gradient_descent_median.to_csv("ProcessedData/stochastic_gradient_descent_median.csv")
