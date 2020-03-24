@@ -1,6 +1,7 @@
 # this module predicts january 2020 prices based on the historical data from 2019
 # prediction is done using ML algo and Adj Close 2019 prices
-
+import time
+start_counting =time.time()
 import numpy as np
 import pandas as pd
 from sklearn.linear_model import LinearRegression
@@ -86,3 +87,4 @@ svr_prediction_frame.reset_index(drop=True, inplace=True)
 stock_data_predictions = pd.concat([stock_data, lr_prediction_frame, svr_prediction_frame], axis=1)
 stock_data_predictions = stock_data_predictions.set_index('Date', drop=True)
 stock_data_predictions.to_csv("ProcessedData/StockPredictions.csv")
+

@@ -164,3 +164,4 @@ if __name__ == "__main__":
     print("Stochastic Gradient Descent accuracy is:", nltk.classify.accuracy(SGDC_classifier, test_data) * 100, "%\n")
     save_classifier = open("TrainedAlgorithms/SGDC_classifier.pickle", "wb")
     pickle.dump(SGDC_classifier, save_classifier)
+    save_classifier.close()
